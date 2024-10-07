@@ -10,6 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+
+  console.log("TEMPLATE CARREGADO");
+
   return (
     <html lang="pt-br">
       <body>
