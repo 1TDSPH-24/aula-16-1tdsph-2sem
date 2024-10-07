@@ -10,12 +10,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+  console.log("layoult carregado!")
   return (
     <html lang="pt-br">
       <body>
-        <Cabecalho/>
-          {children}
-        <Rodape/>
+          <Cabecalho/>
+            {children}
+          <Rodape/>
       </body>
     </html>
   );

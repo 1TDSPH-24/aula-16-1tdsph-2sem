@@ -2,7 +2,7 @@ import Spinner from '@/components/Spinner/Spinner'
 import React from 'react'
 
 const Loading = () => {
-    console.log('omnkmndskmdaslkmk')
+    // console.log('omnkmndskmdaslkmk')
   return (
     <div>
       {/* <h1>Loading...</h1> */}
