@@ -17,6 +17,10 @@ export default function Produtos() {
         chamadaApi();
     }, []);
 
+    const handleDelete = async ()=> {
+                                                                                                                                                                                          
+    }
+
 
     return (
         <div>
@@ -38,7 +42,7 @@ export default function Produtos() {
                             <td>{produto.nome}</td>
                             <td>{produto.preco}</td>
                             <td>{produto.estoque}</td>
-                            <td> <Link href={`/produtos/produto/${produto.id}`}>Editar</Link> </td>
+                            <td> <Link href={`/produtos/produto/${produto.id}`}>Editar</Link> | <Link href={`/produtos/produto/${produto.id}`}>Excluir</Link> </td>
                         </tr>
                     ))}
                 </tbody>
