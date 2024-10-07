@@ -11,3 +11,15 @@ export async function GET(request:Request,{params}:{params:{id:number}}){
 
     return NextResponse.json(produto);
 }
+
+export async function DELETE(request:Request,{params}:{params:{id:number}}){
+    
+    const file = await fs.readFile(process.cwd() + '/src/data/base.json','utf-8');
+    const produtos:TipoProduto[] = JSON.parse(file);
+
+    const idProduto = produtos.findIndex( p => p.id == params.id );
+    produtos.splice(idProduto,1)
+
+    return NextResponse.json({msg:"Produto removido com sucesso!"});
+}
+

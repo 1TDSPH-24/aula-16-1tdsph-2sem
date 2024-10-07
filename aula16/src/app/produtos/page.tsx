@@ -17,6 +17,10 @@ export default function Produtos() {
         chamadaApi();
     }, []);
 
+    const handleDelete = async ( id : number)=>{
+        const request = await fetch("http://localhost:3000/api/base-produtos")
+    }
+
 
     return (
         <div>
@@ -29,6 +33,7 @@ export default function Produtos() {
                         <th>Preço</th>
                         <th>Estoque</th>
                         <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,6 +44,7 @@ export default function Produtos() {
                             <td>{produto.preco}</td>
                             <td>{produto.estoque}</td>
                             <td> <Link href={`/produtos/produto/${produto.id}`}>Editar</Link> </td>
+                            <td> <Link href={`/produtos/produto/${produto.id}`}>Excluir</Link> </td>
                         </tr>
                     ))}
                 </tbody>
