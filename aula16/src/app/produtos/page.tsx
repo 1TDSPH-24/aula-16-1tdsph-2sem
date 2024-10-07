@@ -2,6 +2,7 @@
 import { TipoProduto } from "@/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { MdDelete } from "react-icons/md";
 
 export default function Produtos() {
 
@@ -17,6 +18,12 @@ export default function Produtos() {
         chamadaApi();
     }, []);
 
+    const handleDelete = async(id:number) =>{
+
+        const response = await fetch("http://localhost:3000/api")
+
+    }
+
 
     return (
         <div>
@@ -28,7 +35,7 @@ export default function Produtos() {
                         <th>Nome</th>
                         <th>Preço</th>
                         <th>Estoque</th>
-                        <th>Editar</th>
+                        <th>Editar|Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +45,9 @@ export default function Produtos() {
                             <td>{produto.nome}</td>
                             <td>{produto.preco}</td>
                             <td>{produto.estoque}</td>
-                            <td> <Link href={`/produtos/produto/${produto.id}`}>Editar</Link> </td>
+                            <td> <Link href={`/produtos/produto/${produto.id}`}>Editar</Link> | 
+                            <Link href={`/produtos/produto/${produto.id}`}>Excluir</Link></td>
+                            
                         </tr>
                     ))}
                 </tbody>
