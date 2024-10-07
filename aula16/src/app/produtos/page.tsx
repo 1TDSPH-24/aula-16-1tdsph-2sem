@@ -16,7 +16,8 @@ export default function Produtos() {
         }
         chamadaApi();
     }, []);
-
+    const handleDelete = async (id : number)=>{
+        const request = await fetch("http://localhost:3000/api/base-produtos")}
 
     return (
         <div>
